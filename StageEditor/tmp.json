@@ -517,6 +517,11 @@
           "ActorName": "Gem",
           "FloatData0": 1299.08447265625,
           "FloatData1": 237.64707946777344
+        },
+        {
+          "ActorName": "Toge",
+          "FloatData0": 185,
+          "FloatData1": -21
         }
       ],
       "SceneName": "1"
