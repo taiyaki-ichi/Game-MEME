@@ -1,3 +1,3 @@
 
 
-<img src="Image/stageeditor.jpg" width="500">
+<img src="../Image/stageeditor.jpg" width="500">
