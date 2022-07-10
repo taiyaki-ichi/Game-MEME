@@ -5,8 +5,8 @@ namespace Game
 {
 	TitleLogo::TitleLogo(const GameLib::Vector2& pos)
 		:mIcon{"../Assets/Player/icon.png"}
-		, mEngText{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mJpnText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mEngText{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mJpnText{ L"../Assets/Font/mplus-1c-black.ttf" }
 	{
 		using namespace TitleLogParam;
 

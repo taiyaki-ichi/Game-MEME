@@ -33,7 +33,7 @@ int CALLBACK WinMain(
 	_In_ int       nCmdShow
 )
 {
-	auto app = GameLib::CreatAppPtr({ "MEME",Stage::WindowSize::WIDTH,Stage::WindowSize::HEIGHT });
+	auto app = GameLib::CreatAppPtr({ L"MEME",Stage::WindowSize::WIDTH,Stage::WindowSize::HEIGHT });
 	app->Start<Game::Game>();
 
 	return 0;

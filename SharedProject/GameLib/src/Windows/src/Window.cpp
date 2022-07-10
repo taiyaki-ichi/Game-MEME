@@ -1,9 +1,13 @@
 #include"../Window.hpp"
-#include"WindowClassName.hpp"
 #include<Windows.h>
 
 namespace GameLib
 {
+
+    namespace {
+        static float WINDOW_WIDTH = 0.f;
+        static float WINDOW_HEIGHT = 0.f;
+    }
 
     //ウィンドウの破壊メッセを処理、最低限のウィンドウの機能のみここで実装
     LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -23,10 +27,9 @@ namespace GameLib
     }
 
 
-	bool CreateAppWindow(std::string&& windowName, float windowWidth, float windowHeigth)
+	bool CreateAppWindow(wchar_t const* windowName, float windowWidth, float windowHeigth, HWND& hwnd)
 	{
 
-		HWND hwnd;
         HINSTANCE hInstance = GetModuleHandle(NULL);
         if (!hInstance)
             return false;
@@ -44,7 +47,7 @@ namespace GameLib
             LoadCursor(NULL, IDC_ARROW),	
             NULL,							
             NULL,							
-            WINDOW_CLASS_NAME,													
+            windowName,													
             NULL	
         };
         
@@ -55,8 +58,8 @@ namespace GameLib
         //ウィンドウの生成
         hwnd = CreateWindowEx(
             0,
-            WINDOW_CLASS_NAME,
-            TEXT(windowName.c_str()),
+            windowName,
+            windowName,
             (WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME) | WS_VISIBLE ,
             CW_USEDEFAULT,
             0,
@@ -69,6 +72,9 @@ namespace GameLib
 
         if (!hwnd)
             return false;
+
+        WINDOW_WIDTH = windowWidth;
+        WINDOW_HEIGHT = windowHeigth;
 
         RECT rc1;
         RECT rc2;
@@ -89,20 +95,12 @@ namespace GameLib
 
     float GetWindowWidth()
     {
-
-      
-        RECT rec;
-        HWND hDeskWnd = FindWindowA(WINDOW_CLASS_NAME, nullptr);
-        GetClientRect(hDeskWnd, &rec);
-        return static_cast<float>(rec.right - rec.left);
+        return WINDOW_WIDTH;
     }
 
     float GetWindowHeigth()
     {
-        RECT rec;
-        HWND hDeskWnd = FindWindowA(WINDOW_CLASS_NAME, nullptr);
-        GetClientRect(hDeskWnd, &rec);
-        return static_cast<float>(rec.bottom - rec.top);
+        return WINDOW_HEIGHT;
     }
 
  

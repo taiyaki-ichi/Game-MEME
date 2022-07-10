@@ -1,5 +1,4 @@
 #include"../Input.hpp"
-#include"WindowClassName.hpp"
 #include"GameLib/src/Windows/Window.hpp"
 #include<Windows.h>
 
@@ -14,28 +13,31 @@ namespace GameLib
 		LPDIRECTINPUT8 g_pInputInterface;
 		LPDIRECTINPUTDEVICE8 g_pKeyDevice;
 		LPDIRECTINPUTDEVICE8 g_MouseDevice;
+		HWND g_hwnd;
 	}
 
 	bool CreateInputInterface();
-	bool CreateKeyboardDevice();
-	bool CreateMouseDevice();
+	bool CreateKeyboardDevice(HWND hwnd);
+	bool CreateMouseDevice(HWND hwnd);
 	//!< 協調レベルの設定
-	BOOL SetUpCooperativeLevel(LPDIRECTINPUTDEVICE8 device);
+	BOOL SetUpCooperativeLevel(LPDIRECTINPUTDEVICE8 device, HWND hwnd);
 	//!< マウスの制御起動
 	BOOL StartMouseControl();
 	
 	
 
-	bool InitInput()
+	bool InitInput(HWND hwnd)
 	{
 		if (!CreateInputInterface())
 			return false;
 
-		if (!CreateKeyboardDevice())
+		if (!CreateKeyboardDevice(hwnd))
 			return false;
 
-		if (!CreateMouseDevice())
+		if (!CreateMouseDevice(hwnd))
 			return false;
+
+		g_hwnd = hwnd;
 
 		return true;
 		
@@ -58,7 +60,7 @@ namespace GameLib
 		return true;
 	}
 
-	bool CreateKeyboardDevice()
+	bool CreateKeyboardDevice(HWND hwnd)
 	{
 		HRESULT hr;
 		// IDirectInputDevice8インターフェイスの取得
@@ -75,9 +77,8 @@ namespace GameLib
 			return false;
 		}
 
-		HWND window_handle = FindWindowA(WINDOW_CLASS_NAME, nullptr);
 		// 協調モードの設定
-		hr = g_pKeyDevice->SetCooperativeLevel(window_handle, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE);
+		hr = g_pKeyDevice->SetCooperativeLevel(hwnd, DISCL_BACKGROUND | DISCL_NONEXCLUSIVE);
 		if (FAILED(hr))
 		{
 			return false;
@@ -89,7 +90,7 @@ namespace GameLib
 		return true;
 	}
 
-	bool CreateMouseDevice()
+	bool CreateMouseDevice(HWND hwnd)
 	{
 		g_MouseDevice = nullptr;
 
@@ -112,7 +113,7 @@ namespace GameLib
 		}
 
 		// 協調レベルの設定
-		if (SetUpCooperativeLevel(g_MouseDevice) == false)
+		if (SetUpCooperativeLevel(g_MouseDevice,hwnd) == false)
 		{
 			return false;
 		}
@@ -140,11 +141,11 @@ namespace GameLib
 	}
 
 
-	BOOL SetUpCooperativeLevel(LPDIRECTINPUTDEVICE8 device)
+	BOOL SetUpCooperativeLevel(LPDIRECTINPUTDEVICE8 device, HWND hwnd)
 	{
 		// 協調モードの設定
 		if (FAILED(device->SetCooperativeLevel(
-			FindWindow(WINDOW_CLASS_NAME, nullptr),
+			hwnd,
 			DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)
 		))
 		{
@@ -265,7 +266,7 @@ namespace GameLib
 		GetCursorPos(&p);
 
 		// スクリーン座標にクライアント座標に変換する
-		ScreenToClient(FindWindowA(WINDOW_CLASS_NAME, nullptr), &p);
+		ScreenToClient(g_hwnd, &p);
 
 		mRelativeMousePosX = p.x - mMousePosX;
 		mRelativeMousePosY = p.y - mMousePosY;

@@ -14,7 +14,7 @@ int main() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_DELAY_FREE_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	auto app = GameLib::CreatAppPtr({ "game",800,600 });
+	auto app = GameLib::CreatAppPtr({ L"game",800,600 });
 	app->Start<StageEditor::StartActor>();
 
 

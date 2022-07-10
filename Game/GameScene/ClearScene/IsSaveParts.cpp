@@ -11,11 +11,11 @@ namespace Game
 		, mButtonA{}
 		, mButtonD{}
 		, mKakko{nullptr}
-		, mIsSave{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mHai{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mIie{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mA{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mD{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mIsSave{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mHai{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mIie{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mA{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mD{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mPosition{Position::A}
 	{
 		using namespace IsSaveParam;

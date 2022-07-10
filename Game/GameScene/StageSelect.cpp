@@ -23,8 +23,8 @@ namespace Game
 		, mGemDisplay{ StageSelectParam::GEM_NUM_POSITION,gameData.mPlayerGemNum }
 		, mLifeDisplay{ StageSelectParam::LIFE_NUM_POSITION,gameData.mPlayerLifeNum }
 		,mMoveKeyAssist{nullptr}
-		, mSave{ "../Assets/Font/mplus-1c-black.ttf" }
-		,mReturenTitle{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mSave{ L"../Assets/Font/mplus-1c-black.ttf" }
+		,mReturenTitle{ L"../Assets/Font/mplus-1c-black.ttf" }
 	{
 
 		for (const auto& stageDataTmp : mStageData)

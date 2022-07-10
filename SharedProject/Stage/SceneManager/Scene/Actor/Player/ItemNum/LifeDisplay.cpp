@@ -9,8 +9,8 @@ namespace Stage
 {
 	LifeDisplay::LifeDisplay(const GameLib::Vector2& pos,int num)
 		:mTexture{ "../Assets/Player/icon.png" }
-		, mNum{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mKakeru{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mNum{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mKakeru{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mAdjustPos{pos}
 	{
 		mTexture.SetScale(ItemNumParam::LIFE_ICON_SCALE);

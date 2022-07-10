@@ -17,14 +17,14 @@ namespace Stage
 		, mSceneManager{sceneManager}
 		, mFlameRect{250}
 		, mResumeButton{260}
-		, mResumeText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mResumeText{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mReturnStageSelectButton{260}
-		, mReturnStageSelectText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mReturnStageSelectText{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mPosition{Position::Resume}
 		, mKakko{nullptr}
-		, mPauseText{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mA{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mD{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mPauseText{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mA{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mD{ L"../Assets/Font/mplus-1c-black.ttf" }
 	{
 		mSceneManager->SetState(GameLib::Actor::State::Pause);
 

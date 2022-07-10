@@ -1,5 +1,4 @@
 #include"../Graphics.hpp"
-#include"WindowClassName.hpp"
 #include<vector>
 
 #include<Windows.h>
@@ -22,7 +21,7 @@ namespace GameLib
 	}
 
 
-	bool InitGraphics()
+	bool InitGraphics(HWND hwnd)
 	{
 		D3DPRESENT_PARAMETERS present_param;
 		ZeroMemory(&present_param, sizeof(D3DPRESENT_PARAMETERS));
@@ -53,7 +52,7 @@ namespace GameLib
 		// DirectDeviceの作成
 		if (FAILED(g_D3DInterface->CreateDevice(D3DADAPTER_DEFAULT,
 			D3DDEVTYPE_HAL,
-			FindWindowA(WINDOW_CLASS_NAME, nullptr),
+			hwnd,
 			D3DCREATE_HARDWARE_VERTEXPROCESSING | D3DCREATE_MULTITHREADED,
 			&present_param,
 			&g_D3DDevice)))
@@ -202,7 +201,7 @@ namespace GameLib
 			return nullptr;
 	}
 
-	Font* LoadFont(const std::string& fileName)
+	Font* LoadFont(wchar_t const* fileName)
 	{
 
 		std::unordered_map<int, LPD3DXFONT> font;
@@ -220,7 +219,7 @@ namespace GameLib
 				OUT_DEFAULT_PRECIS,            /* 出力精度 */
 				DEFAULT_QUALITY,            /* 出力品質 */
 				DEFAULT_PITCH | FF_SWISS,    /* フォントピッチとファミリ */
-				fileName.c_str(),                    /* フォント名 */
+				fileName,                    /* フォント名 */
 				&tmp))) {        /* Direct3Dフォントへのポインタへのアドレス */
 
 				std::cout << "FontName: " << fileName << "size: " << static_cast<int>(size) << " is failed\n";

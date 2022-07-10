@@ -6,7 +6,7 @@
 namespace GameLib
 {
 	struct WindowData {
-		std::string WindowName;
+		wchar_t const* WindowName;
 		float WindowWidth;
 		float WindowHeigth;
 	};

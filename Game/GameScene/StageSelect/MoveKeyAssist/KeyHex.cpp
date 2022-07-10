@@ -6,7 +6,7 @@ namespace Game
 {
 	KeyHex::KeyHex(GameLib::Actor* actor,int drawOrder)
 		:GameLib::Actor{actor}
-		, mText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mText{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mTexture{ "../Assets/StageSelect/black-hex.png" }
 		, mPosition{}
 	{

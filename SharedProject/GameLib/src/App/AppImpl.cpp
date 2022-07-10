@@ -22,6 +22,7 @@ namespace GameLib
 		,mWaitTime(static_cast<unsigned long>(1000.f / fps))
 		, mSumTime{0}
 		, mCnt{0}
+		, hwnd{}
 	{
 		mIsRunning = Init(std::move(windowData));
 		mSpaceDivisionTree = std::make_unique<SpaceDivisionTree<Collider>>();
@@ -48,13 +49,13 @@ namespace GameLib
 
 	bool AppImpl::Init(WindowData&& windowData)
 	{
-		if (!CreateAppWindow(std::move(windowData.WindowName), windowData.WindowWidth, windowData.WindowHeigth))
+		if (!CreateAppWindow(windowData.WindowName, windowData.WindowWidth, windowData.WindowHeigth,hwnd))
 			return false;
 
-		if (!InitGraphics())
+		if (!InitGraphics(hwnd))
 			return false;
 
-		if (!InitInput())
+		if (!InitInput(hwnd))
 			return false;
 
 		return true;

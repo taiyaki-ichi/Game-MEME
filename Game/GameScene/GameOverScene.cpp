@@ -7,7 +7,7 @@ namespace Game
 {
 	GameOverScene::GameOverScene(GameLib::Actor* actor,const GameData& gameData)
 		:SceneBase{actor,gameData}
-		, mText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mText{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mRect{}
 	{
 		mRect.SetWidthAndHeight(Stage::WindowSize::WIDTH, Stage::WindowSize::HEIGHT);

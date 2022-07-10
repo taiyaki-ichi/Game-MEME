@@ -58,7 +58,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\Event.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\Graphics.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\Input.hpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\src\WindowClassName.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\Time.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameLib\src\Windows\Window.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Json\picojson.hpp" />

@@ -9,8 +9,8 @@ namespace Game
 	GameClearParts::GameClearParts(GameLib::Actor* actor)
 		:ClearScenePartsBase{actor}
 		, mRect{}
-		, mThank{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mGameClear{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mThank{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mGameClear{ L"../Assets/Font/mplus-1c-black.ttf" }
 	{
 		mGameClear.SetText("GAME CLEAR!!");
 		mGameClear.SetSize(GameLib::Font::Size::Size_72);

@@ -11,8 +11,8 @@ namespace Game
 		, mButtonA{TitleSceneParam::A_BUTTON_ADJUST}
 		, mButtonD{TitleSceneParam::D_BUTTON_ADJUST}
 		, mCursorPos{CursorPos::ButtonA}
-		, mA{ "../Assets/Font/mplus-1c-black.ttf" }
-		, mD{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mA{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mD{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mKakko{nullptr}
 		, mTitleLogo{TitleSceneParam::TITLELOGO_POS}
 		, mStarDisplay{1}

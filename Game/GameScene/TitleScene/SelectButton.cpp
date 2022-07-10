@@ -5,7 +5,7 @@ namespace Game
 	Button::Button(const GameLib::Vector2& pos,int drawOrder)
 		:mInsideRect{ drawOrder }
 		, mOutsiedeRect{ drawOrder-1 }
-		, mText{ "../Assets/Font/mplus-1c-black.ttf" }
+		, mText{ L"../Assets/Font/mplus-1c-black.ttf" }
 		, mGemDisplay{pos+ButtonParam::GEM_NUM_ADJUST,0}
 		, mLifeDisplay{pos+ButtonParam::LIFE_NUM_ADJUST,0}
 	{

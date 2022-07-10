@@ -2,6 +2,7 @@
 #include<string>
 #include<memory>
 #include"GameLib/include/App.hpp"
+#include<Windows.h>
 
 namespace GameLib
 {
@@ -35,5 +36,7 @@ namespace GameLib
 
 		unsigned long mSumTime;
 		int mCnt;
+
+		HWND hwnd;
 	};
 }

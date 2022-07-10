@@ -18,7 +18,7 @@ namespace GameLib
 
 	public:
 		DrawFontText(int drawOrder = 0);
-		DrawFontText(const std::string& fileName, int drawOrder = 0);
+		DrawFontText(const std::wstring& fileName, int drawOrder = 0);
 		virtual ~DrawFontText() = default;
 
 		void Draw() override final;

@@ -5,7 +5,7 @@
 namespace GameLib
 {
 
-	bool InitInput();
+	bool InitInput(HWND hwnd);
 	void ShutdownInput();
 
 	class KeyboardBase

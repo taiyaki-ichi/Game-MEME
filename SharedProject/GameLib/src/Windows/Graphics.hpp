@@ -11,7 +11,7 @@
 namespace GameLib
 {
 
-	bool InitGraphics();
+	bool InitGraphics(HWND hwnd);
 	void ShutdownGraphics();
 
 	//Texture‚Íinclude‚Ì•û‚ÌResource‚É‚ ‚é
@@ -49,7 +49,7 @@ namespace GameLib
 		LPD3DXFONT GetPtr(Size&& size);
 	};
 
-	Font* LoadFont(const std::string& fileName);
+	Font* LoadFont(wchar_t const* fileName);
 
 	//flip=1@…•½‚É”½“]@flip=2 ‚’¼‚É”½“] filp=3‚Í—¼•û
 	void GraphicsDrawTexture(Texture* texture, float posX, float posY, float scale, float rot, int alpha = 255, int flip = 0);

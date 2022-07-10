@@ -6,7 +6,7 @@ namespace GameLib
 {
 
 	std::unordered_map<std::string, Texture*> ResourceManager::mTextures;
-	std::unordered_map<std::string, Font*> ResourceManager::mFonts;
+	std::unordered_map<std::wstring, Font*> ResourceManager::mFonts;
 
 	Texture* ResourceManager::GetTexture(const std::string& fileName)
 	{
@@ -41,26 +41,26 @@ namespace GameLib
 		return tex;
 	}
 
-	Font* ResourceManager::GetFont(const std::string& fileName)
+	Font* ResourceManager::GetFont(const std::wstring& fileName)
 	{
 		auto iter = mFonts.find(fileName);
 		if (iter != mFonts.end()) {
 			return iter->second;
 		}
 		else {
-			auto ptr = LoadFont(fileName);
+			auto ptr = LoadFont(fileName.c_str());
 			mFonts.emplace(fileName, ptr);
 			return ptr;
 		}
 	}
-	Font* ResourceManager::GetFont(std::string&& fileName)
+	Font* ResourceManager::GetFont(std::wstring&& fileName)
 	{
 		auto iter = mFonts.find(fileName);
 		if (iter != mFonts.end()) {
 			return iter->second;
 		}
 		else {
-			auto ptr = LoadFont(fileName);
+			auto ptr = LoadFont(fileName.c_str());
 			mFonts.emplace(std::move(fileName), ptr);
 			return ptr;
 		}
