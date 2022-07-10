@@ -11,7 +11,7 @@ namespace Game
 		:SceneBase{actor,data}
 		, mButton{FromZeroTitleSceneParam::BUTTON_POSITION}
 		, mKakko{nullptr}
-		, mPressSpace{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mPressSpace{ "../Assets/Font/mplus-1c-black.ttf" }
 		, mTitleLogo{ TitleSceneParam::TITLELOGO_POS }
 	{
 

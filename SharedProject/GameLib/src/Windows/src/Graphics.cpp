@@ -201,14 +201,14 @@ namespace GameLib
 			return nullptr;
 	}
 
-	Font* LoadFont(wchar_t const* fileName)
+	Font* LoadFont(char const* fileName)
 	{
-
+		
 		std::unordered_map<int, LPD3DXFONT> font;
 		for (auto& size: Font::GetAllSize())
 		{
 			LPD3DXFONT tmp = nullptr;
-			if (FAILED(D3DXCreateFont(
+			if (FAILED(D3DXCreateFontA(
 				g_D3DDevice,                /* デバイス */
 				static_cast<int>(size),                            /* 文字の高さ */
 				0,                            /* 文字幅 */

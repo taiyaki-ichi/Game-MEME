@@ -5,7 +5,7 @@ namespace Game
 {
 
 	StringDisplay::StringDisplay(const GameLib::Vector2& adjust, GameLib::Font::Size&& size)
-		: mText{ L"../Assets/Font/mplus-1c-black.ttf" }
+		: mText{ "../Assets/Font/mplus-1c-black.ttf" }
 		, mAdjustVec{ adjust }
 	{
 		mText.SetText("");

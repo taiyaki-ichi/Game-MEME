@@ -5,7 +5,7 @@
 namespace GameLib
 {
 	//ウィンドウの生成
-	bool CreateAppWindow(wchar_t const* windowName, float windowWidth, float windowHeigth, HWND& hwnd);
+	bool CreateAppWindow(char const* windowName, float windowWidth, float windowHeigth, HWND& hwnd);
 
 	float GetWindowWidth();
 	float GetWindowHeigth();

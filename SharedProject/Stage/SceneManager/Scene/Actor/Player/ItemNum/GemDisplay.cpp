@@ -7,8 +7,8 @@ namespace Stage
 {
 	GemDisplay::GemDisplay(const GameLib::Vector2& pos,int num)
 		:mTexture{"../Assets/Item/Diamond/002.png"}
-		, mNum{L"../Assets/Font/mplus-1c-black.ttf"}
-		, mKakeru{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mNum{"../Assets/Font/mplus-1c-black.ttf"}
+		, mKakeru{ "../Assets/Font/mplus-1c-black.ttf" }
 		, mAdjustPos{pos}
 	{
 		mTexture.SetScale(ItemNumParam::GEM_ICON_SCALE);

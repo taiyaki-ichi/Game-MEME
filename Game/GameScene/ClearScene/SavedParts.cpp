@@ -6,7 +6,7 @@ namespace Game
 {
 	SavedParts::SavedParts(GameLib::Actor* actor)
 		:ClearScenePartsBase{ actor }
-		, mSaved{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mSaved{ "../Assets/Font/mplus-1c-black.ttf" }
 	{
 		mSaved.SetText("セーブかんりょう！");
 		mSaved.SetSize(GameLib::Font::Size::Size_24);

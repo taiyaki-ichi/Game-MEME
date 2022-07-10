@@ -49,7 +49,7 @@ namespace GameLib
 		LPD3DXFONT GetPtr(Size&& size);
 	};
 
-	Font* LoadFont(wchar_t const* fileName);
+	Font* LoadFont(char const* fileName);
 
 	//flip=1Å@êÖïΩÇ…îΩì]Å@flip=2 êÇíºÇ…îΩì] filp=3ÇÕóºï˚
 	void GraphicsDrawTexture(Texture* texture, float posX, float posY, float scale, float rot, int alpha = 255, int flip = 0);

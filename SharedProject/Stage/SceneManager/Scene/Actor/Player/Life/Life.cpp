@@ -10,7 +10,7 @@ namespace Stage
 	Life::Life(GameLib::Actor* actor,const GameLib::Vector2& adjust)
 		:GameLib::Actor{actor,200}
 		, mTexture{"../Assets/Player/Life/board.png"}
-		, mNumText{ L"../Assets/Font/mplus-1c-black.ttf" }
+		, mNumText{ "../Assets/Font/mplus-1c-black.ttf" }
 		, mLifeNum{ 3 }
 		, mAdjust{adjust}
 	{

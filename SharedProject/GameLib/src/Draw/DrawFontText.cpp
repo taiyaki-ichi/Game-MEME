@@ -17,7 +17,7 @@ namespace GameLib
 		, mColor{0,0,0,255}
 	{
 	}
-	DrawFontText::DrawFontText(const std::wstring& fileName,int drawOrder)
+	DrawFontText::DrawFontText(const std::string& fileName,int drawOrder)
 		:DrawFontText{drawOrder}
 	{
 		mFont = ResourceManager::GetFont(fileName);
