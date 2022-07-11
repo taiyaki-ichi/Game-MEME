@@ -109,7 +109,8 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
-xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
+xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y 
+del $(OutDir)..\Data\save.bin
 xcopy $(ProjectDir)tmp.json $(OutDir) /y
 xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
@@ -132,7 +133,8 @@ xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
-xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
+xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y 
+del $(OutDir)..\Data\save.bin
 xcopy $(ProjectDir)tmp.json $(OutDir) /y
 xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
@@ -151,7 +153,8 @@ xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
-xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
+xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y 
+del $(OutDir)..\Data\save.bin
 xcopy $(ProjectDir)tmp.json $(OutDir) /y
 xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
@@ -174,7 +177,8 @@ xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
-xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
+xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y 
+del $(OutDir)..\Data\save.bin
 xcopy $(ProjectDir)tmp.json $(OutDir) /y
 xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
