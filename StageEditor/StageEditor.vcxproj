@@ -110,7 +110,8 @@
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
 xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
-xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
+xcopy $(ProjectDir)tmp.json $(OutDir) /y
+xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -132,7 +133,8 @@ xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
 xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
-xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
+xcopy $(ProjectDir)tmp.json $(OutDir) /y
+xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,7 +152,8 @@ xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
 xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
-xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
+xcopy $(ProjectDir)tmp.json $(OutDir) /y
+xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -172,7 +175,8 @@ xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)Assets\* $(OutDir)..\Assets\ /e /y
 xcopy $(SolutionDir)Data\* $(OutDir)..\Data\ /e /y
-xcopy $(ProjectDir)tmp.json $(OutDir) /y</Command>
+xcopy $(ProjectDir)tmp.json $(OutDir) /y
+xcopy $(SolutionDir)Manual\StageEditorManual.txt $(OutDir) /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
