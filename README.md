@@ -1,15 +1,22 @@
-# Game7
+# GAME-MEME
 
-2Dアクションゲーム
+2Dアクションゲーム「MEME」
 
-Assetは素材
+<img src="README/play001.gif" width=400><img src="README/play002.gif" width=400>
 
-Dataはセーブデータやステージデータ
+<img src="README/play003.gif" width=400><img src="README/play004.gif" width=400>
 
-Gameはゲーム本体
+## 開発環境
+Visual Studio 2019
 
-ImageはREADME用の画像など
+## 使用言語
+C++17
 
-ShaderedProjectはゲームとステージエディタ用のライブラリ
+## 使用API
+Win32
+DirectX9
 
-StageEditorはステージエディタ
+## 使用素材
+フォント: M+ FONTS https://mplus-fonts.osdn.jp/about2.html
+
+絵: 自作
