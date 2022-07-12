@@ -27,7 +27,7 @@ namespace GameLib
     }
 
 
-	bool CreateAppWindow(char const* windowName, float windowWidth, float windowHeigth, HWND& hwnd)
+	bool CreateAppWindow(WINDOW_NAME_TYPE const* windowName, float windowWidth, float windowHeigth, HWND& hwnd)
 	{
 
         HINSTANCE hInstance = GetModuleHandle(NULL);
@@ -36,8 +36,8 @@ namespace GameLib
         
         
         // シンプルウィンドウクラス設定
-        WNDCLASSEXA wcex = {
-            sizeof(WNDCLASSEXA),	
+        WNDCLASSEX wcex = {
+            sizeof(WNDCLASSEX),	
             CS_HREDRAW | CS_VREDRAW,
             WndProc,
             0,								
@@ -51,12 +51,12 @@ namespace GameLib
             NULL	
         };
         
-        if (!RegisterClassExA(&wcex))
+        if (!RegisterClassEx(&wcex))
             return false;
        
 
         //ウィンドウの生成
-        hwnd = CreateWindowExA(
+        hwnd = CreateWindowEx(
             0,
             windowName,
             windowName,

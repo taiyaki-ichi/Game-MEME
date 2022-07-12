@@ -14,7 +14,11 @@ int main() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_DELAY_FREE_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	auto app = GameLib::CreatAppPtr({ "game",800,600 });
+#ifdef _M_X64
+	auto app = GameLib::CreatAppPtr({ L"StageEditor",800,600 });
+#else 
+	auto app = GameLib::CreatAppPtr({ "StageEditor",800,600 });
+#endif
 	app->Start<StageEditor::StartActor>();
 
 

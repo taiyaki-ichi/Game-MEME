@@ -5,8 +5,14 @@
 #include"Actor/Actor.hpp"
 namespace GameLib
 {
+#ifdef _M_X64
+#define WINDOW_NAME_TYPE wchar_t
+#else 
+#define WINDOW_NAME_TYPE char
+#endif
+
 	struct WindowData {
-		char const* WindowName;
+		WINDOW_NAME_TYPE const* WindowName;
 		float WindowWidth;
 		float WindowHeigth;
 	};
