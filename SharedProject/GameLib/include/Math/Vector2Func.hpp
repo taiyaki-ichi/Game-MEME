@@ -4,6 +4,7 @@
 #include<utility>
 #include<algorithm>
 #include<vector>
+#include<array>
 
 #include<iostream>
 
@@ -61,9 +62,9 @@ namespace GameLib
 	}
 
 	//反時計回りの4っつのベクトルみたいな
-	inline std::vector<Vector2> GetCounterclockwise4Vec() {
+	inline std::array<Vector2,4> GetCounterclockwise4Vec() {
 		
-		std::vector<Vector2> v = {
+		std::array<Vector2,4> v = {
 			Vector2{1.f,1.f},
 			Vector2{-1.f,1.f},
 			Vector2{-1.f,-1.f},
@@ -75,11 +76,17 @@ namespace GameLib
 	}
 
 
-	inline std::vector<Vector2> GetRectangleVectors(const Vector2& center,float width,float heigth,float rot) {
-		std::vector<Vector2> vecs = GetCounterclockwise4Vec();
-		std::vector<Vector2> result;
+	inline std::array<Vector2,4> GetRectangleVectors(const Vector2& center,float width,float heigth,float rot) {
+		/*
+		auto vecs = GetCounterclockwise4Vec();
+		std::array<Vector2, 4> result{};
 		std::transform(vecs.begin(), vecs.end(), std::back_inserter(result),
 			[center, width, heigth, rot](const Vector2& vec) {return Rotation(Vector2{ vec.x * width / 2.f,vec.y * heigth / 2.f }, rot) + center; });
+			*/
+		auto result = GetCounterclockwise4Vec();
+		std::for_each(result.begin(), result.end(),
+			[center, width, heigth, rot](auto& vec) {vec = Rotation(Vector2{ vec.x * width / 2.f,vec.y * heigth / 2.f }, rot) + center; }
+		);
 
 		return result;
 	}
@@ -94,7 +101,7 @@ namespace GameLib
 	}
 
 	//ある点が四角形の内側かどうか、4つの点は反時計回り
-	inline bool IsInsideRect(const Vector2& p, const std::vector<Vector2>& point) {
+	inline bool IsInsideRect(const Vector2& p, const std::array<Vector2,4>& point) {
 		if (Vector2::Cross(point[3] - point[0], p - point[3]) > 0)
 			return false;
 		if (Vector2::Cross(point[2] - point[3], p - point[2]) > 0)
@@ -109,7 +116,7 @@ namespace GameLib
 
 
 
-	inline bool CollisionDetection(std::vector<Vector2>&& rect1, std::vector<Vector2>&& rect2) 
+	inline bool CollisionDetection(std::array<Vector2,4>&& rect1, std::array<Vector2,4>&& rect2) 
 	{
 
 		//点が含まれているか
