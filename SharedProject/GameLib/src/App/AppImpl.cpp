@@ -69,16 +69,6 @@ namespace GameLib
 
 		Wait(mTime, mWaitTime);
 
-		/*
-		mSumTime += GetTime() - mTime;
-		mCnt++;
-		if (mSumTime >= 1000) {
-			std::cout << mCnt << std::endl;
-			mSumTime = 0;
-			mCnt = 0;
-		}
-		*/
-
 		mTime = GetTime();
 
 		mRootActor->Update();
